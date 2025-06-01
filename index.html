@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomad Air - Your Next Chapter Starts Here</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0F172A; /* slate-900 */
+            color: #E2E8F0; /* slate-200 */
+            scroll-behavior: smooth;
+        }
+        .hero-bg {
+            background-image: url('https://placehold.co/1920x1080/1E293B/94A3B8?text=Nomad+Air+Takes+Off');
+            /* Consider a more dynamic or abstract background that evokes travel and discovery */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax effect */
+        }
+        .glassmorphism {
+            background: rgba(30, 41, 59, 0.65); /* slate-800 with slightly more opacity */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(51, 65, 85, 0.35); /* slate-700 with opacity */
+        }
+        .btn-primary {
+            background-color: #06B6D4; /* cyan-500 */
+            color: white;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(6, 182, 212, 0.2);
+        }
+        .btn-primary:hover {
+            background-color: #0891B2; /* cyan-600 */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(6, 182, 212, 0.3);
+        }
+        .btn-secondary {
+            background-color: #F59E0B; /* amber-500 */
+            color: #1E293B; /* slate-800 */
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(245, 158, 11, 0.2);
+        }
+        .btn-secondary:hover {
+            background-color: #D97706; /* amber-600 */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(245, 158, 11, 0.3);
+        }
+        .card-hover:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 12px 24px rgba(0, 200, 220, 0.15);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1E293B; }
+        ::-webkit-scrollbar-thumb { background: #06B6D4; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0891B2; }
+        #mobile-menu { transition: transform 0.3s ease-in-out; }
+
+        .manifesto-highlight {
+            background: linear-gradient(to right bottom, rgba(6, 182, 212, 0.1), rgba(15, 23, 42, 0.1));
+            border-left: 5px solid #F59E0B; /* amber-500 */
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <header class="fixed top-0 left-0 right-0 z-50 glassmorphism shadow-lg">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#" class="text-3xl font-extrabold">
+                    <span class="text-cyan-400">Nomad</span><span class="text-amber-400">Air</span>
+                </a>
+                <nav class="hidden md:flex space-x-6 items-center">
+                    <a href="#destinations" class="text-slate-300 hover:text-cyan-400 transition duration-300 font-medium">Destinations</a>
+                    <a href="#deals" class="text-slate-300 hover:text-cyan-400 transition duration-300 font-medium">Curated Escapes</a>
+                    <a href="#story" class="text-slate-300 hover:text-cyan-400 transition duration-300 font-medium">Our Story</a>
+                    <a href="#nomad-base" class="text-slate-300 hover:text-cyan-400 transition duration-300 font-medium">Nomad Base</a>
+                    <button class="btn-primary py-2.5 px-7 rounded-lg font-semibold shadow-md text-base">Launch Your Journey</button>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-300 hover:text-cyan-400 focus:outline-none">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden fixed inset-0 bg-slate-900 bg-opacity-95 transform translate-x-full z-40 p-6">
+            <div class="flex justify-end mb-6">
+                 <button id="mobile-menu-close-button" class="text-slate-300 hover:text-cyan-400 focus:outline-none">
+                    <i class="fas fa-times fa-2x"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-6 items-center text-xl">
+                <a href="#destinations" class="text-slate-300 hover:text-cyan-400 transition duration-300 font-medium mobile-nav-link">Destinations</a>
+                <a href="#deals" class="text-slate-300 hover:text-cyan-400 transition duration-300 font-medium mobile-nav-link">Curated Escapes</a>
+                <a href="#story" class="text-slate-300 hover:text-cyan-400 transition duration-300 font-medium mobile-nav-link">Our Story</a>
+                <a href="#nomad-base" class="text-slate-300 hover:text-cyan-400 transition duration-300 font-medium mobile-nav-link">Nomad Base</a>
+                <button class="btn-primary py-3 px-8 rounded-lg font-semibold shadow-md w-full mt-4">Launch Your Journey</button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-bg min-h-screen flex items-center justify-center pt-20">
+        <div class="bg-slate-900 bg-opacity-60 backdrop-blur-sm p-8 md:p-12 rounded-xl shadow-2xl text-center max-w-3xl mx-4">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+                <span class="text-white">Still Scrolling? </span><span class="text-cyan-400">Let's Get Flying.</span>
+            </h1>
+            <p class="text-slate-300 text-lg md:text-xl mb-8">
+                Your next adventure is closer than you think. Tell us, Trailblazer, where does your spirit want to roam?
+            </p>
+            <form class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-end glassmorphism p-6 rounded-lg">
+                <div class="col-span-1">
+                    <label for="from" class="block text-sm font-medium text-cyan-300 mb-1 text-left">From</label>
+                    <input type="text" id="from" name="from" placeholder="Current Location" class="w-full bg-slate-700 text-white border-slate-600 rounded-md p-3 focus:ring-cyan-500 focus:border-cyan-500 placeholder-slate-400">
+                </div>
+                <div class="col-span-1">
+                    <label for="to" class="block text-sm font-medium text-cyan-300 mb-1 text-left">To</label>
+                    <input type="text" id="to" name="to" placeholder="Dream Destination" class="w-full bg-slate-700 text-white border-slate-600 rounded-md p-3 focus:ring-cyan-500 focus:border-cyan-500 placeholder-slate-400">
+                </div>
+                <div class="col-span-1">
+                    <label for="departure" class="block text-sm font-medium text-cyan-300 mb-1 text-left">Depart</label>
+                    <input type="date" id="departure" name="departure" class="w-full bg-slate-700 text-white border-slate-600 rounded-md p-3 focus:ring-cyan-500 focus:border-cyan-500 placeholder-slate-400" style="color-scheme: dark;">
+                </div>
+                <button type="submit" class="col-span-1 md:col-span-2 lg:col-span-1 btn-secondary py-3 px-6 rounded-lg font-bold text-lg shadow-md h-full">
+                    <i class="fas fa-search-location mr-2"></i>Seek Adventure
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <section id="deals" class="py-16 md:py-24 bg-slate-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-4">Handpicked <span class="text-amber-400">Odysseys</span></h2>
+            <p class="text-slate-400 text-lg text-center mb-12 max-w-2xl mx-auto">More than just flights. These are springboards to your next great story.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-slate-700 rounded-xl shadow-xl overflow-hidden transform transition duration-300 card-hover">
+                    <img src="https://placehold.co/600x400/06B6D4/0F172A?text=Icelandic+Aurora+Chase" alt="Icelandic Escape" class="w-full h-56 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Image+Not+Found';">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-cyan-400">Chase the Aurora in Iceland</h3>
+                        <p class="text-slate-300 mb-4 text-sm">Witness cosmic ballet, soak in geothermal spas. Adventure from $799.</p>
+                        <button class="btn-primary py-2 px-5 rounded-lg font-medium text-sm">Uncover Iceland</button>
+                    </div>
+                </div>
+                <div class="bg-slate-700 rounded-xl shadow-xl overflow-hidden transform transition duration-300 card-hover">
+                    <img src="https://placehold.co/600x400/F59E0B/0F172A?text=Kyoto+Cultural+Immersion" alt="Kyoto Immersion" class="w-full h-56 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Image+Not+Found';">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-amber-400">Kyoto: Ancient Traditions, Modern Zen</h3>
+                        <p class="text-slate-300 mb-4 text-sm">Temples, tea ceremonies, and tranquil gardens await. Serenity from $849.</p>
+                        <button class="btn-secondary py-2 px-5 rounded-lg font-medium text-sm">Explore Kyoto</button>
+                    </div>
+                </div>
+                <div class="bg-slate-700 rounded-xl shadow-xl overflow-hidden transform transition duration-300 card-hover">
+                    <img src="https://placehold.co/600x400/10B981/0F172A?text=Patagonia+Trekking+Expedition" alt="Patagonia Expedition" class="w-full h-56 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Image+Not+Found';">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-emerald-400">Patagonia: Trek to World's End</h3>
+                        <p class="text-slate-300 mb-4 text-sm">Majestic peaks, turquoise lakes, untamed wilderness. Expedition from $999.</p>
+                        <button class="btn-primary py-2 px-5 rounded-lg font-medium text-sm bg-emerald-500 hover:bg-emerald-600">Conquer Patagonia</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="spontaneity-engine" class="py-16 md:py-24 bg-slate-900 text-center">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <i class="fas fa-dice-d20 fa-3x text-cyan-400 mb-6 animate-bounce"></i>
+            <h2 class="text-4xl font-bold mb-4">The <span class="text-cyan-400">Serendipity</span> Engine</h2>
+            <p class="text-slate-400 text-lg mb-8 max-w-xl mx-auto">Can't decide? Let the cosmos (and our clever code) chart your course. Ready to roll the dice on destiny?</p>
+            <button id="spin-the-globe" class="btn-primary text-lg font-semibold py-4 px-10 rounded-lg shadow-lg">
+                <i class="fas fa-compass mr-2"></i>Reveal My Adventure!
+            </button>
+            <div id="surprise-destination" class="mt-8 text-xl text-amber-400 font-semibold" style="min-height: 30px;">
+                </div>
+        </div>
+    </section>
+
+    <section id="manifesto" class="py-16 md:py-24 bg-slate-800/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">Our <span class="text-amber-400">Pledge</span> To The Bold</h2>
+            <blockquote class="text-xl md:text-2xl text-slate-200 leading-relaxed max-w-3xl mx-auto p-8 rounded-lg manifesto-highlight shadow-xl">
+                "For the dreamers stuck in day jobs, the seekers of vistas unseen, the souls who know 'later' often means 'never'. Nomad Air was forged for you. We believe in journeys that reshape you, flights that are part of the joy, and that your story is waiting to be written in a thousand different skies. Your next chapter doesn't just start here—it takes flight."
+            </blockquote>
+        </div>
+    </section>
+    
+    <section id="story" class="py-16 md:py-24 bg-slate-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold">Born from a Spark, Built by <span class="text-cyan-400">Three</span>.</h2>
+                <p class="text-slate-400 text-lg mt-2">How a wild idea took wing.</p>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://placehold.co/600x450/334155/E2E8F0?text=The+Nomad+Trio+Brainstorming" alt="Nomad Air Founders Concept" class="rounded-xl shadow-2xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Image+Not+Found';">
+                </div>
+                <div class="md:w-1/2 text-left">
+                    <h3 class="text-2xl font-semibold text-amber-400 mb-4">From Bathroom Wall Scribbles to Sky-High Ambitions</h3>
+                    <p class="text-slate-300 mb-4 leading-relaxed">
+                        It sounds like a movie plot, right? Jason spots a number on a bathroom wall, texts it with a half-joking "life-changing websites?" idea. What he didn't expect was Mariah, with her infectious "Why stop at websites? Let's aim higher!" energy, and Abhishek, the calm strategist who heard 'airline' and actually started drafting a business plan on a napkin.
+                    </p>
+                    <p class="text-slate-300 mb-4 leading-relaxed">
+                        One wild text led to a coffee, that coffee to a hundred late-night calls, and suddenly, this unlikely trio – Jason the idea guy, Mariah the visionary spark, and Abhishek the get-it-done architect – were actually building an airline. We're still figuring out who's the official pilot, who makes the best in-flight announcements, and who ties their shoes fastest (it's a long story).
+                    </p>
+                    <p class="text-slate-300 mb-6 leading-relaxed">
+                        We're still on the hunt for a great mechanic (seriously, call us!), but our mission is clear: make travel more than just a transit. Make it an *experience*. And yes, we finally have enough airplanes. Mostly.
+                    </p>
+                    <a href="#contact" class="btn-primary py-3 px-6 rounded-lg font-semibold">Meet The Full Crew (Coming Soon!)</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="nomad-base" class="py-16 md:py-24 bg-slate-800 text-center">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <i class="fas fa-crown fa-3x text-amber-400 mb-6"></i>
+            <h2 class="text-4xl font-bold mb-4">Welcome to <span class="text-amber-400">Nomad Base</span></h2>
+            <p class="text-slate-400 text-lg mb-8 max-w-xl mx-auto">This isn't your average points program. This is your all-access pass to a world of curated experiences, surprise upgrades, and a community that lives for the journey. Get ready to be treated like the adventurer you are.</p>
+            <button class="btn-secondary text-lg font-semibold py-4 px-10 rounded-lg shadow-lg">
+                <i class="fas fa-key mr-2"></i>Unlock Your Insider Access
+            </button>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 border-t border-slate-700 py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h4 class="text-xl font-semibold text-cyan-400 mb-3">NomadAir</h4>
+                    <p class="text-slate-400 text-sm">Your Next Chapter Takes Flight.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold text-cyan-400 mb-3">Explore</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-slate-400 hover:text-amber-400 text-sm">About Us</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-amber-400 text-sm">Careers (Mechanics, call us!)</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-amber-400 text-sm">Media Kit</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-amber-400 text-sm">FAQs & Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold text-cyan-400 mb-3">Join The Journey</h4>
+                    <div class="flex justify-center space-x-4 text-2xl">
+                        <a href="#" class="text-slate-400 hover:text-cyan-400"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-cyan-400"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-cyan-400"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-cyan-400"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="text-slate-500 text-sm">&copy; <span id="currentYear"></span> Nomad Air. All Rights Reserved. Conceived by chance, crafted for adventure.</p>
+            <p class="text-slate-600 text-xs mt-2">Disclaimer: We're building something amazing. Actual flight bookings coming soon. Patience, future Nomad!</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenuCloseButton = document.getElementById('mobile-menu-close-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+            mobileMenu.classList.add('translate-x-0');
+        });
+        mobileMenuCloseButton.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+            mobileMenu.classList.remove('translate-x-0');
+        });
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                mobileMenu.classList.remove('translate-x-0');
+            });
+        });
+
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        const spinButton = document.getElementById('spin-the-globe');
+        const surpriseDestinationDiv = document.getElementById('surprise-destination');
+        const destinations = [
+            "the mystical Northern Lights in Tromsø?", 
+            "the ancient wonders of Petra, Jordan?", 
+            "the vibrant coral reefs of Raja Ampat?", 
+            "a thrilling trek through New Zealand's Fiordland?", 
+            "the colorful streets of Valparaíso, Chile?",
+            "a culinary journey through Ho Chi Minh City?",
+            "the serene temples of Luang Prabang, Laos?"
+        ];
+
+        if (spinButton) {
+            spinButton.addEventListener('click', () => {
+                surpriseDestinationDiv.textContent = 'Consulting the compass of curiosity...';
+                setTimeout(() => {
+                    const randomIndex = Math.floor(Math.random() * destinations.length);
+                    surpriseDestinationDiv.innerHTML = `The winds whisper... <span class="animate-pulse">${destinations[randomIndex]}</span>`;
+                }, 1500);
+            });
+        }
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href').length > 1 && !this.classList.contains('mobile-nav-link')) {
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
